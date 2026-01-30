@@ -6,12 +6,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { signIn } from "../utils/auth";
+import { auth, signIn } from "../utils/auth";
 import { Label } from "@/components/ui/label";
 import React from "react";
 import SubmitButton from "../componets/SubmitButton";
-import { toast } from "sonner";
-export default function page() {
+import { redirect } from "next/navigation";
+export default  async function page() {
+  const session = await auth()
+   if (session) {
+     redirect("/dashboard");
+   }
   return (
     <>
       <div className="flex min-h-screen items-center justify-center px-4 bg-gradient-to-br from-gray-100 to-white">
@@ -28,7 +32,12 @@ export default function page() {
             <form
               action={async (formData) => {
                 "use server";
-                const res = await signIn("resend", formData);
+                console.log("formdata: ",formData)
+                const res = await signIn("resend", {
+                  redirect:true,
+                  redirectTo:"/dashboard",
+                  email:formData.get("email")
+                });
                 console.log(res);
               }}
               className="flex flex-col gap-y-5"
