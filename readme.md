@@ -8,7 +8,7 @@
 
 A full-stack **Next.js** application that allows users to **create, manage, and send invoices** directly to their clients' emails, along with transaction reports and dashboards.
 
-Live Demo: **[invoiceBanao.vercel.app](https://invoiceBanao.vercel.app)**
+Live Demo: **[invociebanao.thissidemayur.me](https://invoicebanao.thissidemayur.me/)**
 
 ---
 
