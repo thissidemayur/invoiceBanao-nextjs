@@ -7,7 +7,6 @@
     "start": "next start",
     "lint": "next lint",
     "build": "prisma generate && next build"
-  
   },
   "pnpm": {
     "overrides": {
@@ -38,7 +37,7 @@
     "jspdf-autotable": "^5.0.2",
     "lucide-react": "^0.525.0",
     "mailtrap": "^4.2.0",
-    "next": "15.4.2",
+    "next": "15.4.10",
     "next-auth": "5.0.0-beta.29",
     "next-themes": "^0.4.6",
     "nodemailer": "^7.0.5",
