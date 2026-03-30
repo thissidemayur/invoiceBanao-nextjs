@@ -16,7 +16,6 @@ async function getInvoiceData(userId: string) {
 export default async function page() {
   const session = await requiredUser();
   const invoiceData = await getInvoiceData(session.user?.id as string);
-  console.log("invoiceData: ", invoiceData);
   if (!invoiceData.length)
     return (
       <EmptyState
