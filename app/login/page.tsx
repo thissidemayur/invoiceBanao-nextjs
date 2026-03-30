@@ -12,13 +12,14 @@ import React from "react";
 import SubmitButton from "../componets/SubmitButton";
 import { redirect } from "next/navigation";
 export default  async function page() {
+  let session
   try {
-    const session = await auth()
-     if (session) {
-       redirect("/dashboard");
-     }
+     session = await auth()
   } catch (error) {
     console.error(`[AUTH FAILED: ]`,error)
+  }
+  if (session) {
+    redirect("/dashboard");
   }
   return (
     <>
